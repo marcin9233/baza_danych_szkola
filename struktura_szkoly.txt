@@ -1,0 +1,27 @@
+Temat: Plan zajêæ szko³y
+Tab1. NAUCZYCIELE
+	1 nauczyciel na 1 klasê (wychowawca)
+	wiele nauczycieli na 1 salê
+	wiele nauczycieli na 1 przedmiot
+		pesel(IDnau),imie,nazwisko,uwagi,IDklasy,IDsali,IDprzedmiot
+Tab2. KLASY
+	1 klasa na 1 nauczyciela (wychowawca)
+	1 klasa na wielu uczniów
+	wiele klas na 1 rocznik
+		IDklasy,IDnau,IDrocznik,liczba_uczniow,uwagi
+Tab3. ROCZNIK
+	1 rocznik na wiele klas
+	1 rocznik na wiele przedmiotów
+		IDrocznik,rok(np.1995/1996)
+Tab4. PRZEDMIOT
+	wiele przedmiotów na 1 salê
+	wiele przedmiotów na 1 rocznik (!przedmiot o nazwie: Matematyka 1!)
+	1 przedmiot na wiele nauczycieli
+		IDprzedmiotu,IDsali,IDrocznik
+Tab5. SALA/GABINET
+	1 sala na wiele przedmiotów
+	1 sala na wiele nauczycieli
+		IDsali,
+Tab6. UCZNIOWIE
+	wiele uczniów na 1 klasê
+		pesel(IDucznia),imie,nazwisko,uwagi,IDklasy

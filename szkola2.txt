@@ -1,0 +1,67 @@
+/*
+Created		10.10.2018
+Modified		10.10.2018
+Project		
+Model		
+Company		
+Author		
+Version		
+Database		mySQL 5 
+*/
+
+
+drop table IF EXISTS ROCZNIKI;
+drop table IF EXISTS UCZNIOWIE;
+drop table IF EXISTS SALE;
+drop table IF EXISTS PRZEDMIOTY;
+drop table IF EXISTS KLASY;
+drop table IF EXISTS NAUCZYCIELE;
+
+
+Create table NAUCZYCIELE (
+	nauczycielID Int NOT NULL,
+	imie Varchar(20) NOT NULL,
+	nazwisko Varchar(43) NOT NULL,
+	uwagi Text,
+	przedmiotID Int NOT NULL,
+	nrRoku Year(4) NOT NULL,
+	salaID Int NOT NULL,
+	UNIQUE (nauczycielID),
+ Primary Key (nauczycielID,przedmiotID,nrRoku,salaID)) ENGINE = MyISAM;
+
+Create table KLASY (
+	klasaID Varchar(2) NOT NULL AUTO_INCREMENT,
+	liczba_uczniow Int,
+	uwagi Text,
+	nrRoku Year(4) NOT NULL,
+ Primary Key (klasaID,nrRoku)) ENGINE = MyISAM;
+
+Create table PRZEDMIOTY (
+	przedmiotID Int NOT NULL AUTO_INCREMENT,
+	nazwa Varchar(15) NOT NULL,
+	nrRoku Year(4) NOT NULL,
+	salaID Int NOT NULL,
+ Primary Key (przedmiotID,nrRoku,salaID)) ENGINE = MyISAM;
+
+Create table SALE (
+	salaID Int NOT NULL,
+	nazwa Int NOT NULL,
+	UNIQUE (salaID),
+ Primary Key (salaID)) ENGINE = MyISAM;
+
+Create table UCZNIOWIE (
+	uczenID Int NOT NULL,
+	imie Varchar(20) NOT NULL,
+	nazwisko Varchar(43) NOT NULL,
+	uwagi Text,
+	klasaID Varchar(2) NOT NULL,
+	nrRoku Year(4) NOT NULL,
+	UNIQUE (uczenID),
+ Primary Key (uczenID,klasaID,nrRoku)) ENGINE = MyISAM;
+
+Create table ROCZNIKI (
+	nrRoku Year(4) NOT NULL,
+	UNIQUE (nrRoku),
+ Primary Key (nrRoku)) ENGINE = MyISAM;
+
+

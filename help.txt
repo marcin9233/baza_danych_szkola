@@ -1,0 +1,9 @@
+pattern:
+%d - wyœwietla datê (mo¿na podaæ format)
+%p - pokazuje priorytet
+%c - wyswietla kategorie
+%t - nazwa watku
+%m - wyswietla wiadomosc
+
+https://logging.apache.org/log4j/2.0/manual/configuration.html
+https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html
